@@ -44,14 +44,14 @@ def create_json(file_name: str, items: tuple):
         json.dump(item_dict, f)
 
 
-weapons = input("What weapon(s) would you like to search for (seperate all weapon names with a comma)")
+weapons = input("What weapon(s) would you like to search for (seperate all weapon names with a comma)\n")
 weapon_list = map(strip_text, weapons.split(","))
-use_json = input("Would you like to save the search(es) to a JSON file? (Y/N)")
+use_json = input("Would you like to save the search(es) to a JSON file? (Y/N)\n")
 while use_json.lower() not in ("y", "n"):
-    use_json = input("Would you like to save the search(es) to a JSON file? (Y/N)")
+    use_json = input("Would you like to save the search(es) to a JSON file? (Y/N)\n")
 if use_json == "y":
-    file_name = input("What would you like to name the JSON file?")
-    create_json(file_name, weapon_list)
+    file_name = input("What would you like to name the JSON file? (Please don't include a file extension)\n")
+    create_json(file_name+".json", weapon_list)
 else:
     for i in weapon_list:
         try:
