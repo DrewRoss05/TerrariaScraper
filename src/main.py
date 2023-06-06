@@ -26,9 +26,9 @@ def search_weapon(weapon: str) -> dict:
     for i in range(len(names)):
         stat_dict[names[i]] = stats[i]
     # associate the rarity value with the correpsonding text color
-    stat_dict['Rarity'] = {"01*": "White", "02*": "Blue", "03*": "Green", "04*": "Orange", "05*": "Light Red",
-                           "06*": "Pink", "07*": "Light Purple", "08*": "Lime", "09*": "Yellow", "10*": "Cyan", 
-                           "11*": "Red", "12*": "Purple"}[stat_dict["Rarity"]]
+    stat_dict['Rarity'] = {"00*": "White", "01*": "Blue", "02*": "Green", "03*": "Orange", "04*": "Light Red",
+                           "05*": "Pink", "06": "Light Purple", "07*": "Lime", "08*": "Yellow", "9*": "Cyan", 
+                           "10*": "Red", "11*": "Purple"}[stat_dict["Rarity"]]
     # remove (largely) uselss stats
     del stat_dict['Use'], stat_dict['Type'], stat_dict['']
     return stat_dict
